@@ -1,130 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>❤️ Just For You ❤️</title>
+<meta charset="UTF-8">
+<title>❤️ Private ❤️</title>
 
-  <!-- ❌ LINK PREVIEW BAND -->
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
-  <meta name="twitter:card" content="none">
+<!-- ❌ LINK PREVIEW FULLY BLOCK -->
+<meta property="og:title" content=" ">
+<meta property="og:description" content=" ">
+<meta property="og:image" content="">
+<meta name="twitter:card" content="none">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      font-family: 'Arial', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff5f9e,#ffb3c6);
+  font-family:Arial;
+}
 
-    .box {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 330px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
+.card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  width:320px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
 
-    img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
+img{
+  width:100%;
+  border-radius:15px;
+  margin-top:15px;
+}
+button{
+  padding:12px 18px;
+  border:none;
+  border-radius:20px;
+  background:#ff3366;
+  color:white;
+  font-size:15px;
+}
+</style>
 
-    h2 {
-      color: #ff3366;
-    }
+<script>
+(function(){
+  const correctPassword = "Kenil@8866";
+  const userPass = prompt("🔒 Enter Password");
 
-    button {
-      padding: 12px 18px;
-      margin: 8px;
-      border: none;
-      border-radius: 20px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    .yes {
-      background: #ff3366;
-      color: white;
-    }
-
-    .no {
-      background: #ddd;
-    }
-  </style>
-
-  <!-- 🔐 PASSWORD PROTECTION (HARD STOP) -->
-  <script>
-    (function () {
-      const correctPassword = "Kenil@8866";
-      const userPass = prompt("🔒 Enter Password");
-
-      if (userPass !== correctPassword) {
-        document.body.innerHTML = `
-          <div style="
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            background:black;
-            color:white;
-            font-size:22px;
-            text-align:center;">
-            ❌ Wrong Password<br><br>
-            Access Denied 😜
-          </div>
-        `;
-        throw new Error("STOP");
-      }
-    })();
-  </script>
-
+  if(userPass !== correctPassword){
+    document.body.innerHTML = `
+      <div style="
+        background:black;
+        color:white;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:22px;">
+        ❌ Access Denied
+      </div>`;
+    throw new Error("STOP");
+  }
+})();
+</script>
 </head>
 
 <body>
 
-  <div class="box">
+<div class="card">
+  <h2>Baby ❤️</h2>
+  <p>Will you be my Valentine?</p>
 
-    <!-- 👇👇👇 YAHAN GF KA PHOTO LINK DAALNA -->
-    <img src="PASTE_GF_PHOTO_LINK_HERE" alt="My Love">
+  <!-- ✅ IMAGE ANDAR HAI, BUT PASSWORD KE BAAD HI LOAD -->
+  <img src="https://drive.google.com/uc?id=PHOTO_ID_HERE">
 
-    <h2>Baby ❤️<br>Will you be my Valentine?</h2>
+  <p style="margin-top:15px;">I love you so much 💖</p>
 
-    <button class="yes" onclick="yesClick()">
-      Yes, haa mari jaann 😘
-    </button>
-
-    <button class="no" onclick="noClick()">
-      No, but aa tara mate nthi, biji badhi mate che 😂
-    </button>
-
-    <p id="msg"></p>
-
-  </div>
-
-  <script>
-    function yesClick() {
-      document.querySelector(".box").innerHTML = `
-        <h2>💖 I love you so much 💖</h2>
-        <p style="font-size:18px;">
-          mari wiffeyyyy jii ❤️
-        </p>
-      `;
-    }
-
-    function noClick() {
-      alert("Galat button dab gaya 😏❤️");
-    }
-  </script>
+  <button onclick="alert('💍 Forever ❤️')">Yes 😘</button>
+</div>
 
 </body>
 </html>
