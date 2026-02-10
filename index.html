@@ -6,6 +6,8 @@
 
 <!-- 🚫 LINK PREVIEW BLOCK -->
 <meta property="og:image" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
 <meta name="twitter:card" content="none">
 
 <style>
@@ -110,7 +112,7 @@ button{
 
   if(userPass !== correctPassword){
     document.body.innerHTML =
-    "<h2 style='text-align:center;margin-top:40vh;'>❌ Access Denied</h2>";
+      "<h2 style='text-align:center;margin-top:40vh;'>❌ Access Denied</h2>";
     throw new Error("STOP");
   }
 })();
@@ -124,8 +126,8 @@ button{
   <button id="yes" onclick="yesLove()">Yes, haa mari jaann 😘</button>
   <button id="no" onmouseover="moveNo()">No, but aa tara mate nathi, biji badhi mate che 😂</button>
 
-  <!-- IMAGE EMPTY HAI, SRC JS SE AAYEGA -->
-  <img id="pic">
+  <!-- IMAGE ANDAR HI AAYEGI -->
+  <img id="pic" alt="my love">
 
   <div id="text">
     I love you so much ❤️<br>
@@ -134,6 +136,8 @@ button{
 </div>
 
 <script>
+const imageURL = "https://i.postimg.cc/Wz0M056B/IMG-20251214-145644-987.jpg";
+
 function floatItem(icon){
   const f=document.createElement("div");
   f.className="float";
@@ -154,8 +158,11 @@ function moveNo(){
 
 function yesLove(){
   const pic=document.getElementById("pic");
-  pic.src="https://i.postimg.cc/Wz0M056B/IMG-20251214-145644-987.jpg";
-  pic.style.display="block";
+
+  pic.onload = function(){
+    pic.style.display="block";
+  };
+  pic.src=imageURL;
 
   document.getElementById("text").style.display="block";
   document.getElementById("ring").style.display="block";
